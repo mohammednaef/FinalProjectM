@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +23,8 @@ public class HomeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     AdapterUser adapterUser;
 
+    final List<User> users=new ArrayList<>();
+
     FirebaseUser firebaseUser;
     DatabaseReference reference;
 
@@ -33,25 +36,26 @@ public class HomeActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.Userrecyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager((getApplicationContext())));
-
-        adapterUser=new AdapterUser(getApplicationContext(),ReadUser());
+ReadUser();
     }
-    public List<User> ReadUser(){
-        final List<User> users=new ArrayList<>();
+    public void ReadUser(){
 
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-        reference= FirebaseDatabase.getInstance().getReference("User");
+        reference= FirebaseDatabase.getInstance().getReference().child("User");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                users.clear();
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    User user=dataSnapshot.getValue(User.class);
-                    assert  user!=null;
-                    assert  firebaseUser!=null;
-                    if(!user.getId().equals(firebaseUser.getUid())){
-                       users.add(user);
+                    users.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                 //   Toast.makeText(HomeActivity.this, dataSnapshot.getValue(User.class).getUserName() + "", Toast.LENGTH_LONG).show();
+                  //  Toast.makeText(HomeActivity.this, dataSnapshot.getValue(User.class).getId() + "", Toast.LENGTH_SHORT).show();
+                    if (!dataSnapshot.getValue(User.class).getId().equals(firebaseUser.getUid())) {
+                        User user = new User();
+                        user.setId(dataSnapshot.getValue(User.class).getId());
+                        user.setUserName(dataSnapshot.getValue(User.class).getUserName());
+                        users.add(user);
                     }
+                    adapterUser=new AdapterUser(getApplicationContext(),users);
                     recyclerView.setAdapter(adapterUser);
                 }
             }
@@ -61,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-        return users;
+
     }
 
 }

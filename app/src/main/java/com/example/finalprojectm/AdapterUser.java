@@ -22,7 +22,7 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.user_item,parent);
+        View view= LayoutInflater.from(context).inflate(R.layout.user_item,parent,false);
         return new ViewHolder(view);
     }
 
@@ -45,7 +45,7 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return userList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
