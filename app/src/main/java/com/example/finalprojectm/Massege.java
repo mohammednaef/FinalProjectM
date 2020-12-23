@@ -1,9 +1,17 @@
 package com.example.finalprojectm;
 
-public class massege {
+public class Massege {
     String sender;
     String reciver;
     String message;
+    public Massege(){
+
+    }
+    public Massege(String sender, String reciver, String message) {
+        this.sender=sender;
+        this.reciver=reciver;
+        this.message=message;
+    }
 
     public String getSender() {
         return sender;
