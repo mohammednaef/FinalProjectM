@@ -73,7 +73,7 @@ public class MassegeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user=dataSnapshot.getValue(User.class);
-                textView_username.setText(user.getUserName());
+                textView_username.setText(user.getFullName());
 
                 ReadMessage(firebaseUser.getUid(),userid);
             }

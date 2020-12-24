@@ -35,7 +35,7 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final User user=userList.get(position);
-        holder.textView_username.setText(user.getUserName());
+        holder.textView_username.setText(user.getFullName());
         holder.itemView.setOnClickListener(v -> {
             Intent intent=new Intent(context, MassegeActivity.class);
             intent.putExtra("userid",user.getId());
@@ -58,13 +58,13 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolder> {
              userList.clear();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
              List<User> collect=   origenlusers.stream()
-                        .filter(i->i.getUserName().toLowerCase().contains(strSearch))
+                        .filter(i->i.getFullName().toLowerCase().contains(strSearch))
                         .collect(Collectors.toList());
              userList.addAll(collect);
             }else {
 
                 for (User i:origenlusers){
-                    if (i.getUserName().toLowerCase().contains(strSearch)){
+                    if (i.getFullName().toLowerCase().contains(strSearch)){
                         userList.add(i);
                     }
                 }
