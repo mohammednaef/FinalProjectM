@@ -166,7 +166,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public boolean isEmptyEmail(String email){
-
+        if (email.contains("")){
+            System.out.println(" is Empty Email");
+            return false;
+        }
+        return true;
     }
 
     }
