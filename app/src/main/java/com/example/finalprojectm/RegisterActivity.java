@@ -200,7 +200,12 @@ public class RegisterActivity extends AppCompatActivity {
      }
 
      public boolean isInValidFullName(String fullName){
-
+         if (fullName.contains("Hashem") || fullName.contains("Karam")) {
+             System.out.println(" Invalid Full Name");
+             return false;
+         }
+         System.out.println(" valid Full Name");
+         return true;
      }
 
     }
