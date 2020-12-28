@@ -181,4 +181,8 @@ public class RegisterActivity extends AppCompatActivity {
         System.out.println(" Invalid Password");
         return false;
     }
+    public boolean isInValidPassword(String password){
+
+    }
+
     }

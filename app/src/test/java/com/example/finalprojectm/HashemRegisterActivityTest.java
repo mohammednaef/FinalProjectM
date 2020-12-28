@@ -1,10 +1,13 @@
 package com.example.finalprojectm;
+import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
-public class HashemRegisterActivityTest {
+public class HashemRegisterActivityTest  {
 
+    @Mock
     RegisterActivity registerActivity;
 
     @Before
@@ -46,5 +49,11 @@ public class HashemRegisterActivityTest {
     public void isValidPassword_test7()throws Exception{
         Assert.assertTrue("Password is Valid",registerActivity.isValidPassword("123456"));
     }
+
+    @Test
+    public void isInValidPassword_test8()throws Exception{
+     Assert.assertFalse("Password is inValid",registerActivity.isInValidPassword("1234"));
+    }
+
 
 }
