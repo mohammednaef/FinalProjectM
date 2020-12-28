@@ -11,17 +11,24 @@ private LoginValidatorInterface view;
 public LoginInterface(LoginValidatorInterface loginValidatorInterface){
     this.view = loginValidatorInterface;
 }
+    private final String PATTERN = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%_.*-]).{8,20}$";
 
 
     @Override
-    public void isValidEmail(CharSequence email) {
+    public boolean isValidEmail(CharSequence email) {
+        return false;
 
     }
 
     @Override
     public boolean isValidPassword(CharSequence password) {
-      return false;
 
+        if(password == null){
+            return false;
+        }
+        Pattern pattern = Pattern.compile(this.PATTERN);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
     }
 
     @Override

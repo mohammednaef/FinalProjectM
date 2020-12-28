@@ -37,6 +37,7 @@ public class LoginInterfaceTest extends TestCase {
     @Test
     public void TestIsValidPassword(){
         CharSequence password = "669966Y@y00!";
+        loginValidatorInterface.isValidPassword(password);
         Mockito.verify(loginValidatorInterface).isValidPassword(password);
 
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -89,13 +90,14 @@ public class LoginActivity extends AppCompatActivity implements LoginValidatorIn
     }
 
     @Override
-    public void isValidEmail(CharSequence email) {
+    public boolean isValidEmail(CharSequence email) {
+        return false;
 
     }
 
     @Override
     public boolean isValidPassword(CharSequence password) {
-
-        return false;
+         passworded.addTextChangedListener((TextWatcher) password);
+         return true;
     }
 }
