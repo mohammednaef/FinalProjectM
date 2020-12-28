@@ -36,4 +36,10 @@ public class HashemRegisterActivityTest {
     public void inValidEmailAddress_test5()throws Exception{
         Assert.assertFalse("Email is Not Valid",registerActivity.isInValidEmail("hashem@gmailcom"));
     }
+
+    @Test
+    public void isEmptyEmail_test6()throws Exception{
+        Assert.assertFalse("Email is Empty",registerActivity.isEmptyEmail(""));
+    }
+
 }
