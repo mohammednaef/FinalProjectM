@@ -199,4 +199,8 @@ public class RegisterActivity extends AppCompatActivity {
         return false;
      }
 
+     public boolean isInValidFullName(String fullName){
+
+     }
+
     }
