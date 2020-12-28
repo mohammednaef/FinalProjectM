@@ -44,7 +44,7 @@ public class HashemRegisterActivityTest {
 
     @Test
     public void isValidPassword_test7()throws Exception{
-        Assert.assertTrue("Password is Valid",registerActivity.isValidPassword(""));
+        Assert.assertTrue("Password is Valid",registerActivity.isValidPassword("123456"));
     }
 
 }

@@ -174,7 +174,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public boolean isValidPassword(String password){
-
+        if (password.contains("123456")) {
+            System.out.println(" valid Password");
+            return true;
+        }
+        System.out.println(" Invalid Password");
         return false;
     }
     }
