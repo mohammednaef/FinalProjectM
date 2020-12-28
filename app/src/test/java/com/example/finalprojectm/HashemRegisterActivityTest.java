@@ -13,7 +13,7 @@ public class HashemRegisterActivityTest {
         registerActivity = new RegisterActivity();
     }
 
-    @Test(expected =Exception.class)
+    @Test
     public void ValidEmailAddress_test1()throws Exception{
         Assert.assertTrue("Email is Valid",registerActivity.isValidEmail("hashem@gmail.com"));
     }

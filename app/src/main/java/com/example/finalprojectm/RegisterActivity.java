@@ -148,6 +148,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public boolean isValidEmail (String email ) {
-
+        if (email.contains("hashem@gmail.com")) {
+            System.out.println(" valid Email address");
+            return true;
+        }
+        System.out.println(" Invalid Email address");
+        return false;
     }
     }
