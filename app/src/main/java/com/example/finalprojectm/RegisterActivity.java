@@ -131,23 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                     startActivity(intent);
                                                     finish();
                                                 }}});
-//                            DocumentReference documentReference = fStore.collection("users").document(userID);
-//                            Map<String,Object> user = new HashMap<>();
-//                            user.put("Full Name",fullName);
-//                            user.put("Email",email);
-//                            user.put("Phone",phone);
-//                            user.put("Password",password);
-//                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                @Override
-//                                public void onSuccess(Void aVoid) {
-//                                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    Log.d(TAG, "onFailure: " + e.toString());
-//                                }
-//                            });
+
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
 
                     }else {
@@ -159,6 +143,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),LoginActivity.class)));
+
 
     }
 }
