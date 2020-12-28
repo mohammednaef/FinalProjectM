@@ -55,5 +55,9 @@ public class HashemRegisterActivityTest  {
      Assert.assertFalse("Password is inValid",registerActivity.isInValidPassword("1234"));
     }
 
+    @Test
+    public void isValidFullName_test9()throws Exception{
+        Assert.assertTrue("Full Name is Valid",registerActivity.isValidFullName("Hashem Karam"));
+    }
 
 }

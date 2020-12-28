@@ -190,4 +190,8 @@ public class RegisterActivity extends AppCompatActivity {
           return true;
     }
 
+    public boolean isValidFullName(String fullName){
+
+     }
+
     }
