@@ -156,7 +156,7 @@ public class RegisterActivity extends AppCompatActivity {
         return false;
     }
     public boolean isInValidEmail (String email ) {
-        if (email.contains("hashemgmail.com")) {
+        if (email.contains("hashemgmail.com") || email.contains("hashem@.com")) {
             System.out.println(" in valid Email address");
             return false;
         }
