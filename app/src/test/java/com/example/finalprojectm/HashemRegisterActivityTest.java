@@ -22,4 +22,9 @@ public class HashemRegisterActivityTest {
     public void inValidEmailAddress_test2()throws Exception{
         Assert.assertFalse("Email is Not Valid",registerActivity.isInValidEmail("hashemgmail.com"));
     }
+
+    @Test
+    public void inValidEmailAddress_test3()throws Exception{
+        Assert.assertFalse("Email is Not Valid",registerActivity.isInValidEmail("hashem@.com"));
+    }
 }
