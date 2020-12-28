@@ -175,5 +175,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     public boolean isValidPassword(String password){
 
+        return false;
     }
     }
