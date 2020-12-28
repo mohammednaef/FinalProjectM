@@ -64,4 +64,10 @@ public class HashemRegisterActivityTest  {
     public void isInValidFullName_test10()throws Exception{
         Assert.assertFalse("Full Name is InValid",registerActivity.isInValidFullName("Hashem"));
     }
+
+    @Test
+    public void isValidPhone_test11()throws Exception{
+        Assert.assertTrue("Phone is Valid",registerActivity.isValidPhone("0599478748"));
+    }
+
 }
