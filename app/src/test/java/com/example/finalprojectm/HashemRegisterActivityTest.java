@@ -70,4 +70,9 @@ public class HashemRegisterActivityTest  {
         Assert.assertTrue("Phone is Valid",registerActivity.isValidPhone("0599478748"));
     }
 
+    @Test
+    public void isInValidPhone_test12()throws Exception{
+        Assert.assertFalse("Phone is InValid",registerActivity.isInValidPhone("0599478"));
+    }
+
 }

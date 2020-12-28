@@ -217,4 +217,8 @@ public class RegisterActivity extends AppCompatActivity {
          return false;
      }
 
+     public boolean isInValidPhone(String phone){
+
+     }
+
     }
