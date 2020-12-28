@@ -17,4 +17,9 @@ public class HashemRegisterActivityTest {
     public void ValidEmailAddress_test1()throws Exception{
         Assert.assertTrue("Email is Valid",registerActivity.isValidEmail("hashem@gmail.com"));
     }
+
+    @Test
+    public void inValidEmailAddress_test2()throws Exception{
+        Assert.assertFalse("Email is Not Valid",registerActivity.isInValidEmail("hashemgmail.com"));
+    }
 }

@@ -155,4 +155,6 @@ public class RegisterActivity extends AppCompatActivity {
         System.out.println(" Invalid Email address");
         return false;
     }
+    public boolean isInValidEmail (String email ) {
+
     }
