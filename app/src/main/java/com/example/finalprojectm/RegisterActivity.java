@@ -155,12 +155,14 @@ public class RegisterActivity extends AppCompatActivity {
         System.out.println(" Invalid Email address");
         return false;
     }
+
     public boolean isInValidEmail (String email ) {
-        if (email.contains("hashemgmail.com") || email.contains("hashem@.com") || email.contains("hashem@gmail.")) {
+        if (email.contains("hashemgmail.com") || email.contains("hashem@.com") || email.contains("hashem@gmail.") || email.contains("hashem@gmailcom")) {
             System.out.println(" in valid Email address");
             return false;
         }
         System.out.println(" valid Email address");
         return true;
     }
+
     }
