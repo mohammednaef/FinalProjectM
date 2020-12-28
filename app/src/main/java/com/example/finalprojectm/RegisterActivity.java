@@ -209,7 +209,12 @@ public class RegisterActivity extends AppCompatActivity {
      }
 
      public boolean isValidPhone(String phone){
-
+         if (phone.contains("0599478748")) {
+             System.out.println("valid Phone");
+             return true;
+         }
+         System.out.println("Invalid Phone");
+         return false;
      }
 
     }
