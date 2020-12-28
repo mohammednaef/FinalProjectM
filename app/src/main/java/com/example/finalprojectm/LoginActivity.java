@@ -91,8 +91,8 @@ public class LoginActivity extends AppCompatActivity implements LoginValidatorIn
 
     @Override
     public boolean isValidEmail(CharSequence email) {
-        return false;
-
+        emailed.addTextChangedListener((TextWatcher) email);
+        return true;
     }
 
     @Override

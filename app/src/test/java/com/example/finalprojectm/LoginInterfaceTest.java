@@ -20,7 +20,7 @@ public class LoginInterfaceTest extends TestCase {
     LoginValidatorInterface loginValidatorInterface;
 
     @Before
-    public void setup() throws Exception{
+    public void setup() {
         loginInterface = new LoginInterface(loginValidatorInterface);
 
     }
@@ -28,7 +28,7 @@ public class LoginInterfaceTest extends TestCase {
     @Test
     public void TestIsValidEmail(){
         CharSequence email = "yousef@gmail.com";
-
+        loginValidatorInterface.isValidEmail(email);
         Mockito.verify(loginValidatorInterface).isValidEmail(email);
 
 
@@ -36,7 +36,7 @@ public class LoginInterfaceTest extends TestCase {
 
     @Test
     public void TestIsValidPassword(){
-        CharSequence password = "669966Y@y00!";
+        String password = "669966Y@y00!";
         loginValidatorInterface.isValidPassword(password);
         Mockito.verify(loginValidatorInterface).isValidPassword(password);
 
