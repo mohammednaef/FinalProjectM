@@ -173,4 +173,7 @@ public class RegisterActivity extends AppCompatActivity {
         return true;
     }
 
+    public boolean isValidPassword(String password){
+
+    }
     }

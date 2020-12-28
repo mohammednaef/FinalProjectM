@@ -42,4 +42,9 @@ public class HashemRegisterActivityTest {
         Assert.assertFalse("Email is Empty",registerActivity.isEmptyEmail(""));
     }
 
+    @Test
+    public void isValidPassword_test7()throws Exception{
+        Assert.assertTrue("Password is Valid",registerActivity.isValidPassword(""));
+    }
+
 }
