@@ -51,9 +51,11 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.ViewHolder> {
         return userList.size();
     }
     public void Filter(final String strSearch){
+        throw new RuntimeException("Test Crash"); // Force a crash
         if (strSearch.length() == 0){
             userList.clear();
             userList.addAll(origenlusers);
+            throw new RuntimeException("Test Crash"); // Force a crash
         }else {
              userList.clear();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
