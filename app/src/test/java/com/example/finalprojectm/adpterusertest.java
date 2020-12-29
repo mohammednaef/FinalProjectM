@@ -32,13 +32,14 @@ public class adpterusertest {
             userList.addAll(origenlusers);
     }
         @Test
-        if (i.getFullName().toLowerCase().contains(strSearch)){
+        if (i.getFullName().toLowerCase().contains(strSearch)) {
             userList.add(i);
-        @Test
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            List<User> collect=   origenlusers.stream()
-                    .filter(i->i.getFullName().toLowerCase().contains(strSearch))
-                    .collect(Collectors.toList());
-            userList.addAll(collect);
+            @Test
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                List<User> collect = origenlusers.stream()
+                        .filter(i -> i.getFullName().toLowerCase().contains(strSearch))
+                        .collect(Collectors.toList());
+                userList.addAll(collect);
 
-}
+            }
+        }

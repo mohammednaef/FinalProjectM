@@ -41,8 +41,25 @@ public class PasswordTest {
 
     }
 
+    @Test
+    public void test3(){
 
+        assertFalse(passwordValidation.isValidPassword(null));
+        System.out.println("Passwordtest2 success");
+    }
+    @Test
+    public void test4(){
 
+        assertFalse(passwordValidation.isValidPassword("123456789@1111!@@#dvdbvdbw##00"));
+        System.out.println("Passwordtest4 success");
+
+    }
+    @Test
+    public void test5(){
+
+        assertFalse(passwordValidation.isValidPassword(""));
+        System.out.println("Passwordtest5 success");
+    }
     @After
     public void after(){
         System.out.println("@after");
