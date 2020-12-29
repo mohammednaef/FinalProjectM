@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity implements LoginValidatorIn
 
     @Override
     public boolean isValidPassword(CharSequence password) {
-         passworded.addTextChangedListener((TextWatcher) password);
+         passworded.addTextChangedListener(((TextWatcher) password));
          return true;
     }
 }

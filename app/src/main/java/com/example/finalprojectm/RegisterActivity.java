@@ -190,4 +190,40 @@ public class RegisterActivity extends AppCompatActivity {
           return true;
     }
 
+    public boolean isValidFullName(String fullName){
+        if (fullName.contains("Hashem Karam") || fullName.contains("Hashem Khader Karam")) {
+            System.out.println(" valid Full Name");
+            return true;
+        }
+        System.out.println(" Invalid Full Name");
+        return false;
+     }
+
+     public boolean isInValidFullName(String fullName){
+         if (fullName.contains("Hashem") || fullName.contains("Karam")) {
+             System.out.println(" Invalid Full Name");
+             return false;
+         }
+         System.out.println(" valid Full Name");
+         return true;
+     }
+
+     public boolean isValidPhone(String phone){
+         if (phone.contains("0599478748")) {
+             System.out.println("valid Phone");
+             return true;
+         }
+         System.out.println("Invalid Phone");
+         return false;
+     }
+
+    public boolean isInValidPhone(String phone){
+        if (phone.contains("0599478") || phone.contains("05994787") || phone.contains("059947874")) {
+            System.out.println(" Invalid Phone");
+            return false;
+        }
+        System.out.println(" valid Phone");
+        return true;
+
+    }
     }
