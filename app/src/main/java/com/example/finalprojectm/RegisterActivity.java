@@ -217,9 +217,13 @@ public class RegisterActivity extends AppCompatActivity {
          return false;
      }
 
-     public boolean isInValidPhone(String phone){
-         return false;
+    public boolean isInValidPhone(String phone){
+        if (phone.contains("0599478") || phone.contains("05994787") || phone.contains("059947874")) {
+            System.out.println(" Invalid Phone");
+            return false;
+        }
+        System.out.println(" valid Phone");
+        return true;
 
-     }
-
+    }
     }
