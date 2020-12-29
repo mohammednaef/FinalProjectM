@@ -1,5 +1,6 @@
 package com.example.finalprojectm;
 
+import com.example.finalprojectm.LoginTest.EmailValidation;
 import com.example.finalprojectm.LoginTest.LoginInterface;
 import com.example.finalprojectm.LoginTest.LoginValidatorInterface;
 
@@ -12,16 +13,21 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 @RunWith(MockitoJUnitRunner.class)
 public class LoginInterfaceTest extends TestCase {
 
     LoginInterface loginInterface;
+    EmailValidation email;
     @Mock
     LoginValidatorInterface loginValidatorInterface;
 
     @Before
     public void setup() {
         loginInterface = new LoginInterface(loginValidatorInterface);
+        email = new EmailValidation();
 
     }
 
@@ -29,18 +35,24 @@ public class LoginInterfaceTest extends TestCase {
     public void TestIsValidEmail(){
         CharSequence email = "yousef@gmail.com";
         loginValidatorInterface.isValidEmail(email);
-        Mockito.verify(loginValidatorInterface).isValidEmail(email);
-
+         Mockito.verify(loginValidatorInterface).isValidEmail(email);
 
     }
 
     @Test
     public void TestIsValidPassword(){
-        String password = "669966Y@y00!";
+        CharSequence password = "123321@#Ty" ;
         loginValidatorInterface.isValidPassword(password);
         Mockito.verify(loginValidatorInterface).isValidPassword(password);
 
 
     }
+
+    @Test
+    public void test2(){
+        assertFalse(email.isValidEmail("@yousef.com"));
+        System.out.println("Emailtest2 success");
+    }
+
 
 }
