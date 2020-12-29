@@ -1,10 +1,13 @@
 package com.example.finalprojectm;
+import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
-public class HashemRegisterActivityTest {
+public class HashemRegisterActivityTest  {
 
+    @Mock
     RegisterActivity registerActivity;
 
     @Before
@@ -44,7 +47,32 @@ public class HashemRegisterActivityTest {
 
     @Test
     public void isValidPassword_test7()throws Exception{
-        Assert.assertTrue("Password is Valid",registerActivity.isValidPassword(""));
+        Assert.assertTrue("Password is Valid",registerActivity.isValidPassword("123456"));
+    }
+
+    @Test
+    public void isInValidPassword_test8()throws Exception{
+     Assert.assertFalse("Password is inValid",registerActivity.isInValidPassword("1234"));
+    }
+
+    @Test
+    public void isValidFullName_test9()throws Exception{
+        Assert.assertTrue("Full Name is Valid",registerActivity.isValidFullName("Hashem Karam"));
+    }
+
+    @Test
+    public void isInValidFullName_test10()throws Exception{
+        Assert.assertFalse("Full Name is InValid",registerActivity.isInValidFullName("Hashem"));
+    }
+
+    @Test
+    public void isValidPhone_test11()throws Exception{
+        Assert.assertTrue("Phone is Valid",registerActivity.isValidPhone("0599478748"));
+    }
+
+    @Test
+    public void isInValidPhone_test12()throws Exception{
+        Assert.assertFalse("Phone is InValid",registerActivity.isInValidPhone("0599478"));
     }
 
 }

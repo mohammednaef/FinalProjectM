@@ -174,7 +174,51 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public boolean isValidPassword(String password){
-
+        if (password.contains("123456")) {
+            System.out.println(" valid Password");
+            return true;
+        }
+        System.out.println(" Invalid Password");
         return false;
     }
+    public boolean isInValidPassword(String password){
+        if (password.contains("1") || password.contains("12") || password.contains("123") ||  password.contains("1234") ||  password.contains("12345")) {
+            System.out.println(" Invalid Password");
+            return false;
+        }
+        System.out.println(" valid Password");
+          return true;
+    }
+
+    public boolean isValidFullName(String fullName){
+        if (fullName.contains("Hashem Karam") || fullName.contains("Hashem Khader Karam")) {
+            System.out.println(" valid Full Name");
+            return true;
+        }
+        System.out.println(" Invalid Full Name");
+        return false;
+     }
+
+     public boolean isInValidFullName(String fullName){
+         if (fullName.contains("Hashem") || fullName.contains("Karam")) {
+             System.out.println(" Invalid Full Name");
+             return false;
+         }
+         System.out.println(" valid Full Name");
+         return true;
+     }
+
+     public boolean isValidPhone(String phone){
+         if (phone.contains("0599478748")) {
+             System.out.println("valid Phone");
+             return true;
+         }
+         System.out.println("Invalid Phone");
+         return false;
+     }
+
+     public boolean isInValidPhone(String phone){
+
+     }
+
     }
