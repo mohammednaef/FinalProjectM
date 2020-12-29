@@ -3,6 +3,7 @@ package com.example.finalprojectm;
 import com.example.finalprojectm.LoginTest.EmailValidation;
 import com.example.finalprojectm.LoginTest.LoginInterface;
 import com.example.finalprojectm.LoginTest.LoginValidatorInterface;
+import com.example.finalprojectm.LoginTest.PasswordValidation;
 
 import junit.framework.TestCase;
 
@@ -21,6 +22,7 @@ public class LoginInterfaceTest extends TestCase {
 
     LoginInterface loginInterface;
     EmailValidation email;
+    PasswordValidation passwordValidation;
     @Mock
     LoginValidatorInterface loginValidatorInterface;
 
@@ -77,4 +79,6 @@ public class LoginInterfaceTest extends TestCase {
 
         System.out.println("Emailtest6 success");
     }
+
+
 }
