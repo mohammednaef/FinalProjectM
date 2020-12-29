@@ -54,5 +54,9 @@ public class LoginInterfaceTest extends TestCase {
         System.out.println("Emailtest2 success");
     }
 
-
+    @Test
+    public void test3(){
+        assertFalse(email.isValidEmail(""));
+        System.out.println("Emailtest3 success");
+    }
 }
