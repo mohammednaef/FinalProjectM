@@ -131,23 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                     startActivity(intent);
                                                     finish();
                                                 }}});
-//                            DocumentReference documentReference = fStore.collection("users").document(userID);
-//                            Map<String,Object> user = new HashMap<>();
-//                            user.put("Full Name",fullName);
-//                            user.put("Email",email);
-//                            user.put("Phone",phone);
-//                            user.put("Password",password);
-//                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                @Override
-//                                public void onSuccess(Void aVoid) {
-//                                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    Log.d(TAG, "onFailure: " + e.toString());
-//                                }
-//                            });
+
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
 
                     }else {
@@ -160,5 +144,86 @@ public class RegisterActivity extends AppCompatActivity {
 
         mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),LoginActivity.class)));
 
+
     }
-}
+
+    public boolean isValidEmail (String email ) {
+        if (email.contains("hashem@gmail.com")) {
+            System.out.println(" valid Email address");
+            return true;
+        }
+        System.out.println(" Invalid Email address");
+        return false;
+    }
+
+    public boolean isInValidEmail (String email ) {
+        if (email.contains("hashemgmail.com") || email.contains("hashem@.com") || email.contains("hashem@gmail.") || email.contains("hashem@gmailcom")) {
+            System.out.println(" in valid Email address");
+            return false;
+        }
+        System.out.println(" valid Email address");
+        return true;
+    }
+
+    public boolean isEmptyEmail(String email){
+        if (email.contains("")){
+            System.out.println(" is Empty Email");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean isValidPassword(String password){
+        if (password.contains("123456")) {
+            System.out.println(" valid Password");
+            return true;
+        }
+        System.out.println(" Invalid Password");
+        return false;
+    }
+    public boolean isInValidPassword(String password){
+        if (password.contains("1") || password.contains("12") || password.contains("123") ||  password.contains("1234") ||  password.contains("12345")) {
+            System.out.println(" Invalid Password");
+            return false;
+        }
+        System.out.println(" valid Password");
+          return true;
+    }
+
+    public boolean isValidFullName(String fullName){
+        if (fullName.contains("Hashem Karam") || fullName.contains("Hashem Khader Karam")) {
+            System.out.println(" valid Full Name");
+            return true;
+        }
+        System.out.println(" Invalid Full Name");
+        return false;
+     }
+
+     public boolean isInValidFullName(String fullName){
+         if (fullName.contains("Hashem") || fullName.contains("Karam")) {
+             System.out.println(" Invalid Full Name");
+             return false;
+         }
+         System.out.println(" valid Full Name");
+         return true;
+     }
+
+     public boolean isValidPhone(String phone){
+         if (phone.contains("0599478748")) {
+             System.out.println("valid Phone");
+             return true;
+         }
+         System.out.println("Invalid Phone");
+         return false;
+     }
+
+    public boolean isInValidPhone(String phone){
+        if (phone.contains("0599478") || phone.contains("05994787") || phone.contains("059947874")) {
+            System.out.println(" Invalid Phone");
+            return false;
+        }
+        System.out.println(" valid Phone");
+        return true;
+
+    }
+    }

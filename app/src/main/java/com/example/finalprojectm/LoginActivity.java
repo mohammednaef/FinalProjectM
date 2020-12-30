@@ -6,24 +6,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.finalprojectm.LoginTest.LoginValidatorInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginValidatorInterface {
     Button logbtn;
     EditText emailed;
     EditText passworded;
     FirebaseAuth auth;
     TextView signup;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,34 +51,35 @@ public class LoginActivity extends AppCompatActivity {
 
                 String email = emailed.getText().toString().trim();
                 String password = passworded.getText().toString().trim();
-                if (TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     emailed.setError("Please enter email");
                     return;
 
                 }
-
-                if (TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     passworded.setError("Please enter password");
                     return;
 
                 }
 
-                if (password.length() < 6 ){
+                if (password.length() < 6) {
                     passworded.setError("Password Must be >= 6 Characters");
                     return;
 
                 }
 
-                auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(LoginActivity.this,new OnCompleteListener<AuthResult>() {
+
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
-                            Toast.makeText(LoginActivity.this,"Logged in Successfuly",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            Toast.makeText(LoginActivity.this, "Logged in Successfuly", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                            throw new RuntimeException("login crach"); // Force a crash
 
-                        }else {
-                            Toast.makeText(LoginActivity.this,"Error ! " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -85,5 +87,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean isValidEmail(CharSequence email) {
+        emailed.addTextChangedListener((TextWatcher) email);
+        return true;
+    }
+
+    @Override
+    public boolean isValidPassword(CharSequence password) {
+         passworded.addTextChangedListener(((TextWatcher) password));
+         return true;
     }
 }

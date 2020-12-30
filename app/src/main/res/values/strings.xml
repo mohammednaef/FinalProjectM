@@ -3,4 +3,6 @@
     <string name="msg">massege</string>
     <string name="description">send</string>
     <string name="UserName">Name</string>
+
+    <string name="twitterUsername">\@joeytribbiani</string>
 </resources>
