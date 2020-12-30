@@ -8,11 +8,12 @@ public class MassegeActivityPresenter implements MassegeActivityInterface{
 
     @Override
     public void SendMessage(String sender, String reciver, String message) {
+        sender.equals(reciver);
 
     }
 
     @Override
-    public void ReadMessage(String myid, String heid) {
-
+    public void ReadMessage(String sender, String reciver) {
+        sender.equals(reciver);
     }
 }
