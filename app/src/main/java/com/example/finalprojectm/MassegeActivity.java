@@ -27,7 +27,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MassegeActivity extends AppCompatActivity {
+public class MassegeActivity extends AppCompatActivity  {
     CircleImageView circleImageView;
     TextView textView_username;
 
